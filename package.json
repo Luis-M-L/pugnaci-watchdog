@@ -1,1 +1,28 @@
- 
+{
+  "name": "pugnaci-watchdog",
+  "version": "0.0.0",
+  "description": "Security in real life is a sensitive issue. Keeping the control is important in order to avoid your vigilance system watching on you, so this sofware was designed for not rely on third-parties. Use it under your own responsability.",
+  "keywords": ["security", "camera", "vigilance", "alarm", "domestic"],
+  "homepage": "https://github.com/Luis-M-L/pugnaci-watchdog#readme",
+  "bugs": "https://github.com/Luis-M-L/pugnaci-watchdog/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Luis Martinez Lopez"
+  },
+  "main": "./bin/main.js",
+  "bin": {
+    "pugnaci": "./bin/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luis-M-L/pugnaci-watchdog/"
+  },
+  "config": "",
+  "dependencies": {
+    "nombre": "version"
+  },
+  "engines": {
+    "node": ">=6.14.2",
+    "npm": ">=3.10.10"
+  }
+} 
