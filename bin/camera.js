@@ -13,11 +13,41 @@ var options = {
   verbose: false
 };
 
+var recordPath = "../records/";
+var maxStorage = 50; // in frames
+var delay = 500;
+
 var webcam = NodeWebcam.create(options);
 
-var picName = new Date().getTime();
-webcam.capture("../records/" + picName, function(err,data){
-  if(err){
-    console.log(err.message);
+var rec = 0;
+files = [];
+record();
+
+function record(){
+  var picName = new Date().getTime();
+  webcam.capture(recordPath + picName, function(err,data){
+    if(err){
+      console.log(err.message);
+    }
+  });
+  files.push(picName);
+  //console.log(files);
+  rec++;
+  if(rec > maxStorage) {
+    deleteFirstImage(function(){
+
+    });
   }
-});
+  if(rec < 100){
+    setTimeout(record, delay);
+  }
+}
+
+function deleteFirstImage(callback){
+  fs.unlink(recordPath + files[0], (err) => {
+    if (err) throw err;
+    //console.log(recordPath + files[0], ' was deleted');
+    files.shift();
+    callback();
+  });
+}
