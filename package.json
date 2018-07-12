@@ -19,10 +19,10 @@
   },
   "config": "",
   "dependencies": {
-    "nombre": "version"
+    "node-webcam": "0.4.3"
   },
   "engines": {
     "node": ">=6.14.2",
     "npm": ">=3.10.10"
   }
-} 
+}
